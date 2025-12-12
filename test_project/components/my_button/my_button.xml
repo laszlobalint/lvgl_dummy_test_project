@@ -1,0 +1,33 @@
+<component>
+	<previews>
+		<preview name="light" width="200">
+			<style name="global_style" />
+		</preview>
+		<preview name="dark" width="1000" style_bg_color="0x806767">
+			<set_subject name="dark_theme" value="0" />
+		</preview>
+	</previews>
+
+	<api>
+		<prop name="text" type="string" default="Empty" />
+		<prop name="text_color" type="color" default="#white" />
+	</api>
+
+	<styles>
+		<style name="style_main" bg_color="0xe0944e" bg_opa="100%" pad_all="8" radius="8" />
+	</styles>
+
+	<animations>
+		<timeline name="shake">
+			<animation target="self" duration="100" prop="translate_x" start="0" end="10" early_apply="true" />
+			<animation target="self" duration="200" prop="translate_x" start="10" end="-10" delay="200" />
+			<animation target="self" duration="100" prop="translate_x" start="-10" end="0" delay="400" />
+		</timeline>
+	</animations>
+
+	<view extends="lv_button">
+		<remove_style_all />
+		<style name="style_main" />
+		<h3 label_text="$text" />
+	</view>
+</component>

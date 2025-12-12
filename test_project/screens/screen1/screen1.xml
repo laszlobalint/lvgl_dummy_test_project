@@ -1,0 +1,51 @@
+<screen>
+	<consts>
+		<int name="screen_border_width" value="6" />
+		<color name="screen_dark_color" value="0x111" />
+	</consts>
+
+	<styles>
+		<style name="style_light" bg_color="0xaaf" border_width="4" border_color="0x3939ff" pad_all="8" />
+		<style name="style_dark" bg_color="#screen_dark_color" />
+		<style name="style_big_red_text" text_color="0xf00" text_font="noto_regular_24" />
+	</styles>
+
+	<view style_border_width="#screen_border_width" flex_flow="column">
+		<style name="style_light" />
+		<lv_obj flex_flow="row" width="100%" height="content">
+			<bind_style name="style_dark" subject="dark_theme" ref_value="1" />
+
+			<lv_button>
+				<lv_label translation_tag="greeting" />
+				<event_cb callback="screen_1_hello_cb" trigger="short_clicked" user_data="foo" />
+				<play_timeline_event target="empty" trigger="short_clicked" timeline="shake" />
+				<play_timeline_event
+					trigger="long_pressed"
+					target="empty"
+					timeline="shake"
+					reverse="true"
+					delay="500"
+				/>
+			</lv_button>
+
+			<my_button name="empty" />
+			<my_button
+				text="Hello &#x26;lt;World&#x26;gt; &#10;Newline test&#10;Tabs: A&#x9;B&#10;Control char: &#x26;#x07; (bell)&#10;Quote test: &#x22;double&#x22; and &#x27;single&#x27;&#10;Accents: &#xC4; &#xD6; &#xDC; &#xB0; &#xA9; &#x2122;&#10;CJK: &#x4F60; &#x597D; &#x4E16;&#x754C;&#10;Emoji: &#x1F600; &#x1F680;&#10;Hex only: &#x26;#x36;&#x26;#xaf;"
+			/>
+		</lv_obj>
+
+		<lv_obj flex_flow="row" width="100%" height="content">
+			<bind_flag_if_eq subject="show_clock" flag="hidden" ref_value="0" />
+			<h2 bind_text="clock_title" />
+			<lv_spangroup>
+				<lv_spangroup-span bind_text="hour" style="style_big_red_text" />
+				<lv_spangroup-span text=":" />
+				<lv_spangroup-span bind_text="minutes" bind_text-fmt="%02d" />
+			</lv_spangroup>
+		</lv_obj>
+
+		<lv_obj flex_flow="row" width="100%" height="content">
+			<my_button text="Special characters:&#10;&#10;New lined&#10;&#10;&amp;&amp;//~&lt;&gt;" />
+		</lv_obj>
+	</view>
+</screen>

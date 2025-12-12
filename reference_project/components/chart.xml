@@ -1,0 +1,8 @@
+<component>
+	<view width="100%" height="100%">
+		<lv_chart height="90%" type="stacked">
+			<lv_chart-series color="0xff0000" axis="primary_y" values="0 10 20 30 40 90" />
+			<lv_chart-series color="0x00ff00" axis="primary_y" values="0 10 20 80 33 40 90 20" />
+		</lv_chart>
+	</view>
+</component>

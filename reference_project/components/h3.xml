@@ -1,0 +1,18 @@
+<component>
+	<consts>
+		<string
+			name="hours_string"
+			value="0&#xA;1&#xA;2&#xA;3&#xA;4&#xA;5&#xA;6&#xA;7&#xA;8&#xA;9&#xA;10&#xA;11&#xA;12&#xA;13&#xA;14&#xA;15&#xA;16&#xA;17&#xA;18&#xA;19&#xA;20&#xA;21&#xA;22&#xA;23"
+		/>
+	</consts>
+
+	<animations>
+		<timeline name="grow">
+			<animation prop="pad_left" target="self" start="10" end="30" duration="500" />
+			<animation prop="pad_right" target="self" start="10" end="30" duration="500" />
+			<animation prop="text_letter_space" target="self" start="0" end="5" duration="500" />
+		</timeline>
+	</animations>
+
+	<view extends="lv_label" style_text_color="0xff0000" />
+</component>

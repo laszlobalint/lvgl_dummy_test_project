@@ -1,0 +1,65 @@
+<component>
+	<consts>
+		<int name="delay1" value="200" />
+		<int name="delay2" value="400" />
+		<int name="duration" value="300" />
+	</consts>
+
+	<animations>
+		<timeline name="load">
+			<animation prop="translate_x" target="title" start="-30" end="0" duration="500" />
+			<animation prop="opa" target="title" start="0" end="255" duration="500" />
+
+			<animation
+				prop="translate_y"
+				target="my_button_1"
+				start="-20"
+				end="0"
+				duration="#duration"
+				delay="#delay2"
+				early_apply="true"
+			/>
+			<animation
+				prop="opa"
+				target="my_button_1"
+				start="0"
+				end="255"
+				duration="#duration"
+				delay="#delay2"
+				early_apply="true"
+			/>
+
+			<!-- Animate from the bottom if checked -->
+			<animation
+				prop="translate_y"
+				selector="checked"
+				target="my_button_1"
+				start="20"
+				end="0"
+				duration="#duration"
+				delay="#delay2"
+				early_apply="true"
+			/>
+		</timeline>
+	</animations>
+
+	<view height="200">
+		<h3 text="List title" name="title" />
+
+		<my_animated_button y="20" text="Button 1">
+			<play_timeline_event trigger="clicked" target="self" timeline="load" />
+		</my_animated_button>
+		<my_animated_button y="60" text="Button 2" checkable="true">
+			<!-- reference target by auto-incremented name in code export -->
+			<play_timeline_event trigger="pressed" target="my_animated_button_1" timeline="grow" />
+			<play_timeline_event trigger="released" target="my_animated_button_1" timeline="shrink" delay="1000" />
+		</my_animated_button>
+		<my_animated_button y="60" text="Button 3" checkable="true">
+			<!-- reference target by name assigned in XML -->
+			<play_timeline_event trigger="pressed" target="title" timeline="grow" />
+			<play_timeline_event trigger="pressed" target="footer" timeline="grow" />
+		</my_animated_button>
+
+		<h3 text="Footer" y="100" name="footer" />
+	</view>
+</component>

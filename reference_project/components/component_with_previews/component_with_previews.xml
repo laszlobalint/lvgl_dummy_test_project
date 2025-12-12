@@ -1,0 +1,9 @@
+<component>
+	<previews>
+		<preview name="component_with_previews" width="100" height="100" style_bg_color="0xff0000" />
+	</previews>
+
+	<view>
+		<lv_label text="Component with previews" />
+	</view>
+</component>

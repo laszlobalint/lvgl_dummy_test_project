@@ -1,0 +1,9 @@
+<!-- Export to reference_project_gen.c -->
+<translations languages="en de hu">
+	<translation char_count="10" tag="dog" en="The dog" de="Der Hund" hu="A kutya" />
+	<!-- Swapped language order. When exported keep order defined in "languages". -->
+	<translation char_count="10" tag="cat" de="Die Katze" en="The cat" hu="A cica" />
+	<!-- Missing translation, use NULL as a placeholder -->
+	<translation char_count="10" tag="snake" en="A snake" hu="A kígyó" />
+	<translation char_count="10" tag="rabbit" en="A rabbit" />
+</translations>

@@ -1,0 +1,3 @@
+<screen permanent="true">
+	<view extends="lv_label" />
+</screen>

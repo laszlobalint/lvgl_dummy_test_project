@@ -1,0 +1,14 @@
+<widget>
+	<api>
+		<!-- test params of props -->
+		<prop name="temp">
+			<param name="temp_low" type="int" />
+			<param name="temp_high" type="int" />
+		</prop>
+		<prop name="temp_over" type="int" />
+	</api>
+
+	<view extends="lv_obj">
+		<lv_label text="My Label" />
+	</view>
+</widget>

@@ -1,0 +1,54 @@
+<globals>
+	<api>
+		<!-- Add <enumdefs> here -->
+	</api>
+
+	<consts>
+		<color name="white" value="0xfff" />
+		<color name="black" value="0x000" />
+	</consts>
+
+	<styles>
+		<style name="global_style" pad_all="30" bg_color="0xa80000" />
+	</styles>
+
+	<subjects>
+		<int name="dark_theme" value="0" />
+		<int name="hour" value="10" />
+		<int name="minutes" value="20" />
+		<string name="clock_title" value="Clock" />
+		<int name="show_clock" value="1" />
+	</subjects>
+
+	<images>
+		<!-- Add <file> or <data> tags here -->
+	</images>
+
+	<fonts>
+		<bin
+			as_file="false"
+			name="noto_regular_16"
+			size="16"
+			bpp="8"
+			symbols="°"
+			src_path="fonts/NotoSans_Regular.ttf"
+		/>
+
+		<bin
+			as_file="false"
+			name="noto_regular_24"
+			size="24"
+			bpp="8"
+			symbols="°"
+			src_path="fonts/NotoSans_Regular.ttf"
+		/>
+		<bin
+			as_file="false"
+			name="noto_regular_32"
+			size="32"
+			bpp="2"
+			symbols="°"
+			src_path="fonts/NotoSans_Regular.ttf"
+		/>
+	</fonts>
+</globals>

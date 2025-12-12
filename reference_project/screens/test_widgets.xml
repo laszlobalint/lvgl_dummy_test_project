@@ -1,0 +1,10 @@
+<screen>
+	<view extends="lv_obj">
+		<set_element>
+			<set_element-emission foo="" />
+			<set_element-emission width="1" foo="" />
+			<set_element-emission width="2" foo="" height="2" />
+			<set_element-emission foo="" height="3" />
+		</set_element>
+	</view>
+</screen>

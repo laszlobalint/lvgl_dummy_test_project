@@ -1,0 +1,27 @@
+<screen>
+	<view extends="lv_obj" style_layout="flex" flex_flow="column" style_pad_all="10">
+		<lv_label text="some_screen_1" />
+
+		<lv_scale rotation="-90" angle_range="60" mode="round_outer" style_pad_top="48px">
+			<lv_scale-section min_value="0" bind_max_value="subject1" />
+		</lv_scale>
+
+		<lv_spangroup align="bottom_right">
+			<lv_spangroup-span bind_text="subject_string" />
+			<lv_spangroup-span text="°C" />
+		</lv_spangroup>
+
+		<lv_obj style_grid_column_dsc_array="100 fr(1)" />
+
+		<lv_label
+			text="5 is &amp;lt; than 10, ä你好 ÁÉ° &#10; new line Ｃ «Í I&apos;m &quot;this&quot;. &amp;#xff&#10;&#10;&quot;Hi, Gábor!&quot; &amp; &gt;"
+			height="44"
+		/>
+
+		<!-- Test that these subject-related properties export correctly -->
+		<lv_button>
+			<lv_label text="Button" />
+			<subject_increment_event subject="subject1" step="-2" max_value="10" min_value="0" rollover="true" />
+		</lv_button>
+	</view>
+</screen>

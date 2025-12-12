@@ -1,0 +1,13 @@
+<widget>
+	<api>
+		<!-- ensure an element with no args generates correctly -->
+		<element access="get" name="container" type="lv_obj" />
+	</api>
+
+	<view extends="lv_obj">
+		<lv_dropdown>
+			<!-- this is the getter -->
+			<lv_dropdown-list />
+		</lv_dropdown>
+	</view>
+</widget>

@@ -1,0 +1,3 @@
+<translations languages="en de">
+	<translation tag="greeting" en="Hey!" de="Hallo!" char_count="10" />
+</translations>

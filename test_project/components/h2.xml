@@ -1,0 +1,14 @@
+<component>
+	<previews>
+		<preview name="light" width="200" />
+		<preview name="dark" width="200">
+			<set_subject name="dark_theme" value="0" />
+		</preview>
+	</previews>
+
+	<api>
+		<prop name="label_text" type="string" default="H2 text" />
+	</api>
+
+	<view extends="h1" label_text="$label_text" style_text_font="noto_regular_24" />
+</component>

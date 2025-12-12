@@ -1,0 +1,5 @@
+<component>
+	<view extends="very_simple" style_layout="flex" flex_flow="column">
+		<lv_label text="Component Label" />
+	</view>
+</component>

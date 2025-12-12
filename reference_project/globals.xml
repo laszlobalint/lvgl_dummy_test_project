@@ -1,0 +1,62 @@
+<globals>
+	<api>
+		<!-- Goes to gen.h -->
+		<enumdef name="ui_state">
+			<enum name="normal" help="All good" />
+			<enum name="warning" value="0x20" help="There is a warning" />
+			<enum name="error" />
+			<enum name="critical" help="Big problem." />
+		</enumdef>
+	</api>
+
+	<!-- Export in gen.h as uppercase defines. Add help as comment. -->
+	<consts>
+		<int name="pad_sm" value="8" help="To make paddings unified." />
+		<color name="pink" value="0xff00ff" />
+	</consts>
+
+	<!-- Export to gen.c, no need to wrap it into style_inited.-->
+	<styles>
+		<style
+			name="global_style"
+			help="We will use it in some places"
+			bg_color="#pink"
+			border_color="0xffff00"
+			border_width="4"
+		/>
+	</styles>
+
+	<!-- Export to gen.c -->
+	<images>
+		<data
+			name="img_bell"
+			src_path="images/bell_solid.png"
+			color_format="rgb888"
+			figma_node_id="garbage-right-now"
+		/>
+		<file name="img_bell_file" src_path="images/bell_solid.png" />
+	</images>
+
+	<!-- Export to gen.c -->
+	<fonts>
+		<tiny_ttf src_path="fonts/Nunito_SemiBold.ttf" size="40" name="font_md" />
+		<bin
+			as_file="false"
+			bpp="8"
+			range="0x20-0xf7"
+			symbols=""
+			src_path="fonts/Nunito_SemiBold.ttf"
+			size="18"
+			name="font_sm"
+		/>
+	</fonts>
+
+	<!-- Export to gen.c -->
+	<subjects>
+		<int name="subject1" value="10" min_value="0" max_value="10" />
+		<int name="subject2" value="20" />
+		<float name="subject_float" value="5.3" min_value="0.1" max_value="11.11" />
+		<string name="subject_string" value="skip" />
+		<string name="subject_rtc_time" value="09:55:02&#10;Mon 3 Nov" />
+	</subjects>
+</globals>

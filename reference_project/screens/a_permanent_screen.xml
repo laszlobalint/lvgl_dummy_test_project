@@ -1,0 +1,58 @@
+<screen permanent="true">
+	<view extends="lv_obj" style_layout="flex" flex_flow="column">
+		<!-- shorthand for bind_text param, specify format -->
+		<lv_label bind_text="subject1" bind_text-fmt="%d subject1" />
+		<!-- shorthand for params, both specified as the value -->
+
+		<lv_label bind_text="subject1" />
+
+		<lv_label bind_text="subject_float" bind_text-fmt="%.2f" />
+		<lv_label bind_text="subject_string" />
+
+		<lv_label translation_tag="rabbit" />
+
+		<lv_button>
+			<subject_set_string_event subject="subject_string" trigger="pressed" value="jump" />
+		</lv_button>
+
+		<lv_table>
+			<lv_table-cell column="1" row="0" value="1" />
+			<lv_table-cell column="1" row="1" value="2" ctrl="merge_right" />
+			<lv_table-cell column="1" row="2" />
+		</lv_table>
+
+		<very_simple />
+
+		<lv_label text="---" />
+
+		<extends_another />
+
+		<lv_label text="super nested below" />
+
+		<super_nested />
+
+		<lv_arc start_angle="30" />
+
+		<myarc start_angle="40" />
+
+		<lv_spangroup>
+			<!-- not allowed to have any children -->
+			<lv_spangroup-span />
+		</lv_spangroup>
+
+		<lv_chart>
+			<!-- not allowed to have any children -->
+			<lv_chart-series color="0xff0000" />
+		</lv_chart>
+
+		<lv_scale>
+			<lv_scale-section
+				style_indicator="global_style"
+				style_items="global_style"
+				style_main="global_style"
+				min_value="0"
+				max_value="20"
+			/>
+		</lv_scale>
+	</view>
+</screen>

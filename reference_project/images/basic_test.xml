@@ -1,0 +1,28 @@
+<test>
+	<view extends="a_permanent_screen" />
+	<steps>
+		<screenshot_compare path="start.png" />
+
+		<move_to x="270" y="470" />
+		<wait ms="200" />
+		<press />
+		<wait ms="200" />
+		<move_to x="270" y="0" />
+		<wait ms="200" />
+		<release />
+		<wait ms="500" />
+
+		<screenshot_compare path="middle.png" />
+
+		<move_to x="270" y="470" />
+		<wait ms="200" />
+		<press />
+		<wait ms="200" />
+		<move_to x="270" y="0" />
+		<wait ms="200" />
+		<release />
+		<wait ms="500" />
+
+		<screenshot_compare path="end.png" />
+	</steps>
+</test>

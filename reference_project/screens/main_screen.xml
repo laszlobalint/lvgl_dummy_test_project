@@ -1,0 +1,81 @@
+<screen permanent="true">
+	<consts>
+		<string name="btn_text" value="Super button" />
+	</consts>
+
+	<styles>
+		<style name="style1" bg_color="0xf00" />
+	</styles>
+
+	<view flex_flow="column">
+		<mybutton button_color="0xff0000" subject="subject1" text="My button 1" />
+
+		<mybutton button_opa="200" icon="img_bell" subject="subject1" text="My button 2" width="100">
+			<lv_obj-screen_load_event
+				screen="a_permanent_screen"
+				trigger="long_pressed"
+				duration="300"
+				delay="100"
+				anim_type="over_right"
+			/>
+
+			<screen_create_event screen="some_screen_1" />
+			<style name="style1" selector="scrollbar" />
+			<remove_style name="style1" selector="scrollbar" />
+			<lv_obj-remove_style selector="pressed" />
+			<remove_style selector="scrollbar|pressed" />
+			<remove_style />
+			<remove_style_all />
+
+			<lv_label text="an additional label" style_width="150px" />
+		</mybutton>
+
+		<super_button button_text="#btn_text" subject="subject1" />
+		<super_button button_text="#btn_text" subject="subject1" />
+
+		<with_getter>
+			<with_getter-container />
+		</with_getter>
+
+		<lv_slider bind_value="subject1" />
+
+		<smart_slider value="50">
+			<lv_obj-event_cb callback="my_cb1" trigger="clicked" user_data="1" />
+			<event_cb callback="my_cb1" trigger="pressed" />
+
+			<smart_slider-text color="0x00ff00" font="font_md" style_bg_opa="50%">
+				<lv_image src="img_bell" x="100" />
+			</smart_slider-text>
+
+			<smart_slider-item idx="30" size="20" />
+			<smart_slider-item idx="31" size="30" />
+
+			<smart_slider-ticks part="top" speed="1" />
+
+			<smart_slider-ticks part="bottom" value="100" />
+			<smart_slider-bind_value subject="subject1" state="warning" fmt="%04d" />
+			<smart_slider-bind_value subject="subject2" state="critical" />
+		</smart_slider>
+
+		<h3 />
+		<h3 width="100" />
+		<h3 text="Hello" />
+		<h3 text="Hello&#10;new line" />
+
+		<h3 translation_tag="dog" />
+
+		<h3 bind_text="subject2" />
+
+		<lv_chart>
+			<lv_chart-series color="0xff0000" values="10 20" />
+		</lv_chart>
+
+		<lv_buttonmatrix map="'first' 'second' '&#10;' 'third'" ctrl_map="width_4 checked checkable|disabled" />
+
+		<lv_buttonmatrix map="'first' 'second' '&#10;' 'third'" ctrl_map="width_4 checked checkable|disabled" />
+
+		<lv_button>
+			<subject_set_string_event subject="subject_string" trigger="pressed" value="jump" />
+		</lv_button>
+	</view>
+</screen>

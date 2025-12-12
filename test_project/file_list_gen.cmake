@@ -1,0 +1,13 @@
+list(
+  APPEND
+  PROJECT_SOURCES
+  ${CMAKE_CURRENT_LIST_DIR}/components/h1_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/h2_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/h3_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/my_button/my_button_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/noto_regular_16_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/noto_regular_24_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/noto_regular_32_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen1/screen1_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/test_project_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/test_project.c)

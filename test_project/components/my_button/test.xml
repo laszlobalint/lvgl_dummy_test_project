@@ -1,0 +1,7 @@
+<test>
+	<view extends="my_button" />
+
+	<steps>
+		<screenshot_compare path="start.png" />
+	</steps>
+</test>

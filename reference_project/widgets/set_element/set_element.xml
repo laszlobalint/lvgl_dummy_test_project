@@ -1,0 +1,9 @@
+<widget>
+	<api>
+		<element name="emission" access="set">
+			<arg name="foo" type="string" />
+			<prop name="width" type="int" />
+			<prop name="height" type="int" />
+		</element>
+	</api>
+</widget>

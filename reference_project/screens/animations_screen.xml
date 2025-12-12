@@ -1,0 +1,21 @@
+<screen>
+	<animations>
+		<timeline name="screen_intro">
+			<animation target="self" prop="opa" start="0" end="255" duration="2000" />
+
+			<include_timeline target="my_animated_button_0" timeline="show_up" delay="400" />
+		</timeline>
+	</animations>
+
+	<view extends="lv_obj" style_layout="flex" flex_flow="column">
+		<my_animated_button name="my_button" text="Screen Intro">
+			<play_timeline_event target="self" timeline="screen_intro" />
+		</my_animated_button>
+
+		<my_animated_button text="Animate this Button">
+			<play_timeline_event target="self" timeline="show_up" />
+		</my_animated_button>
+
+		<lv_label name="label" text="Hi" />
+	</view>
+</screen>
