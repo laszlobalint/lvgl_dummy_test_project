@@ -6,7 +6,6 @@
 			<include_timeline target="my_animated_button_0" timeline="show_up" delay="400" />
 		</timeline>
 	</animations>
-
 	<view extends="lv_obj" style_layout="flex" flex_flow="column">
 		<my_animated_button name="my_button" text="Screen Intro">
 			<play_timeline_event target="self" timeline="screen_intro" />
