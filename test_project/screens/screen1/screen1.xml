@@ -3,7 +3,6 @@
 		<int name="screen_border_width" value="6" />
 		<color name="screen_dark_color" value="0x111" />
 	</consts>
-
 	<styles>
 		<style name="style_light" bg_color="0xaaf" border_width="4" border_color="0x3939ff" pad_all="8" />
 		<style name="style_dark" bg_color="#screen_dark_color" />
