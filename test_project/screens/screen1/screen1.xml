@@ -14,7 +14,6 @@
 		<style name="style_light" />
 		<lv_obj flex_flow="row" width="100%" height="content">
 			<bind_style name="style_dark" subject="dark_theme" ref_value="1" />
-
 			<lv_button>
 				<lv_label translation_tag="greeting" />
 				<event_cb callback="screen_1_hello_cb" trigger="short_clicked" user_data="foo" />
