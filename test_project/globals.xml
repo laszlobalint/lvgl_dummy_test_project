@@ -2,7 +2,6 @@
 	<api>
 		<!-- Add <enumdefs> here -->
 	</api>
-
 	<consts>
 		<color name="white" value="0xfff" />
 		<color name="black" value="0x000" />
