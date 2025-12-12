@@ -5,7 +5,6 @@
 			<set_subject name="dark_theme" value="0" />
 		</preview>
 	</previews>
-
 	<api>
 		<prop name="label_text" type="string" default="H2 text" />
 	</api>

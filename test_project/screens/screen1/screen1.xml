@@ -8,7 +8,6 @@
 		<style name="style_dark" bg_color="#screen_dark_color" />
 		<style name="style_big_red_text" text_color="0xf00" text_font="noto_regular_24" />
 	</styles>
-
 	<view style_border_width="#screen_border_width" flex_flow="column">
 		<style name="style_light" />
 		<lv_obj flex_flow="row" width="100%" height="content">
