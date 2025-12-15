@@ -2,6 +2,7 @@
 	<consts>
 		<string name="btn_text" value="Super button" />
 	</consts>
+	
 	<styles>
 		<style name="style1" bg_color="0xf00" />
 	</styles>
