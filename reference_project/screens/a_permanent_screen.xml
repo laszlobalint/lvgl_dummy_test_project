@@ -8,6 +8,7 @@
 		<lv_label bind_text="subject_string" />
 
 		<lv_label translation_tag="rabbit" />
+
 		<lv_button>
 			<subject_set_string_event subject="subject_string" trigger="pressed" value="jump" />
 		</lv_button>
