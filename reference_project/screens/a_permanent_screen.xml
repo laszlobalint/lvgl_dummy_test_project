@@ -1,8 +1,6 @@
 <screen permanent="true">
 	<view extends="lv_obj" style_layout="flex" flex_flow="column">
-		<!-- shorthand for bind_text param, specify format -->
 		<lv_label bind_text="subject1" bind_text-fmt="%d subject1" />
-		<!-- shorthand for params, both specified as the value -->
 
 		<lv_label bind_text="subject1" />
 
