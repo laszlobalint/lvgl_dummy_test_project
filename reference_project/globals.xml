@@ -1,6 +1,5 @@
 <globals>
 	<api>
-		<!-- Goes to gen.h -->
 		<enumdef name="ui_state">
 			<enum name="normal" help="All good" />
 			<enum name="warning" value="0x20" help="There is a warning" />
@@ -51,7 +50,6 @@
 		/>
 	</fonts>
 
-	<!-- Export to gen.c -->
 	<subjects>
 		<int name="subject1" value="10" min_value="0" max_value="10" />
 		<int name="subject2" value="20" />
