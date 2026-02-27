@@ -3,6 +3,7 @@
 		<lv_label bind_text="subject1" bind_text-fmt="%d subject1" />
 
 		<lv_label bind_text="subject1" />
+		<lv_label bind_text="subject1" />
 
 		<lv_label bind_text="subject_float" bind_text-fmt="%.2f" />
 		<lv_label bind_text="subject_string" />
