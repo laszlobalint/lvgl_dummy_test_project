@@ -4,7 +4,7 @@
 			<enum name="normal" help="All good" />
 			<enum name="warning" value="0x20" help="There is a warning" />
 			<enum name="error" />
-			<enum name="critical" help="Big problem." />
+			<enum name="critical" help="A Big problem." />
 		</enumdef>
 	</api>
 
