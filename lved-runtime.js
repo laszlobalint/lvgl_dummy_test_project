@@ -8561,7 +8561,7 @@ for (/**@suppress{duplicate}*/ var i = 0; i <= 288; ++i) {
 
 // End JS library code
 var ASM_CONSTS = {
-  320576: $0 => {
+  321366: $0 => {
     var str = UTF8ToString($0) + "\n\n" + "Abort/Retry/Ignore/AlwaysIgnore? [ariA] :";
     var reply = window.prompt(str, "i");
     if (reply === null) {
@@ -8569,7 +8569,7 @@ var ASM_CONSTS = {
     }
     return allocate(intArrayFromString(reply), "i8", ALLOC_NORMAL);
   },
-  320801: () => {
+  321591: () => {
     if (typeof (AudioContext) !== "undefined") {
       return true;
     } else if (typeof (webkitAudioContext) !== "undefined") {
@@ -8577,7 +8577,7 @@ var ASM_CONSTS = {
     }
     return false;
   },
-  320948: () => {
+  321738: () => {
     if ((typeof (navigator.mediaDevices) !== "undefined") && (typeof (navigator.mediaDevices.getUserMedia) !== "undefined")) {
       return true;
     } else if (typeof (navigator.webkitGetUserMedia) !== "undefined") {
@@ -8585,7 +8585,7 @@ var ASM_CONSTS = {
     }
     return false;
   },
-  321182: $0 => {
+  321972: $0 => {
     if (typeof (Module["SDL2"]) === "undefined") {
       Module["SDL2"] = {};
     }
@@ -8609,11 +8609,11 @@ var ASM_CONSTS = {
     }
     return SDL2.audioContext === undefined ? -1 : 0;
   },
-  321734: () => {
+  322524: () => {
     var SDL2 = Module["SDL2"];
     return SDL2.audioContext.sampleRate;
   },
-  321802: ($0, $1, $2, $3) => {
+  322592: ($0, $1, $2, $3) => {
     var SDL2 = Module["SDL2"];
     var have_microphone = function(stream) {
       if (SDL2.capture.silenceTimer !== undefined) {
@@ -8655,7 +8655,7 @@ var ASM_CONSTS = {
       }, have_microphone, no_microphone);
     }
   },
-  323495: ($0, $1, $2, $3) => {
+  324285: ($0, $1, $2, $3) => {
     var SDL2 = Module["SDL2"];
     SDL2.audio.scriptProcessorNode = SDL2.audioContext["createScriptProcessor"]($1, 0, $0);
     SDL2.audio.scriptProcessorNode["onaudioprocess"] = function(e) {
@@ -8687,7 +8687,7 @@ var ASM_CONSTS = {
       SDL2.audio.silenceTimer = setInterval(silence_callback, ($1 / SDL2.audioContext.sampleRate) * 1e3);
     }
   },
-  324670: ($0, $1) => {
+  325460: ($0, $1) => {
     var SDL2 = Module["SDL2"];
     var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels;
     for (var c = 0; c < numChannels; ++c) {
@@ -8706,7 +8706,7 @@ var ASM_CONSTS = {
       }
     }
   },
-  325275: ($0, $1) => {
+  326065: ($0, $1) => {
     var SDL2 = Module["SDL2"];
     var buf = $0 >>> 2;
     var numChannels = SDL2.audio.currentOutputBuffer["numberOfChannels"];
@@ -8720,7 +8720,7 @@ var ASM_CONSTS = {
       }
     }
   },
-  325764: $0 => {
+  326554: $0 => {
     var SDL2 = Module["SDL2"];
     if ($0) {
       if (SDL2.capture.silenceTimer !== undefined) {
@@ -8754,7 +8754,7 @@ var ASM_CONSTS = {
       SDL2.audioContext = undefined;
     }
   },
-  326770: ($0, $1, $2) => {
+  327560: ($0, $1, $2) => {
     var w = $0;
     var h = $1;
     var pixels = $2;
@@ -8825,7 +8825,7 @@ var ASM_CONSTS = {
     }
     SDL2.ctx.putImageData(SDL2.image, 0, 0);
   },
-  328238: ($0, $1, $2, $3, $4) => {
+  329028: ($0, $1, $2, $3, $4) => {
     var w = $0;
     var h = $1;
     var hot_x = $2;
@@ -8862,18 +8862,18 @@ var ASM_CONSTS = {
     stringToUTF8(url, urlBuf, url.length + 1);
     return urlBuf;
   },
-  329226: $0 => {
+  330016: $0 => {
     if (Module["canvas"]) {
       Module["canvas"].style["cursor"] = UTF8ToString($0);
     }
   },
-  329309: () => {
+  330099: () => {
     if (Module["canvas"]) {
       Module["canvas"].style["cursor"] = "none";
     }
   },
-  329378: () => window.innerWidth,
-  329408: () => window.innerHeight
+  330168: () => window.innerWidth,
+  330198: () => window.innerHeight
 };
 
 function emscripten_getrandom(buf, buflen) {
@@ -8896,6 +8896,17 @@ function js_log_callback(message) {
   if (typeof process !== "undefined") {
     console.log("[LVGL]" + UTF8ToString(message));
   }
+  if (typeof self !== "undefined" && self.postMessage) {
+    self.postMessage({
+      type: "lvgl-log",
+      message: UTF8ToString(message)
+    });
+  }
+}
+
+function js_lvgl_assertion_failure_callback() {
+  console.warn("Preview has stopped due to an assertion failure in LVGL");
+  throw new Error("LVGL assertion failure - see previous logs for details");
 }
 
 function js_xml_is_rendered() {
@@ -8905,34 +8916,40 @@ function js_xml_is_rendered() {
 }
 
 function js_dispatch_subject_event_int(name, value) {
-  if (typeof window !== "undefined" && window.previewStore) {
-    const {setSubject} = window.previewStore.getState();
-    setSubject({
-      name: UTF8ToString(name),
-      type: "int",
-      value
+  if (typeof self !== "undefined" && self.postMessage) {
+    self.postMessage({
+      type: "subject-update",
+      subject: {
+        name: UTF8ToString(name),
+        type: "int",
+        value
+      }
     });
   }
 }
 
 function js_dispatch_subject_event_string(name, value) {
-  if (typeof window !== "undefined" && window.previewStore) {
-    const {setSubject} = window.previewStore.getState();
-    setSubject({
-      name: UTF8ToString(name),
-      type: "string",
-      value: UTF8ToString(value)
+  if (typeof self !== "undefined" && self.postMessage) {
+    self.postMessage({
+      type: "subject-update",
+      subject: {
+        name: UTF8ToString(name),
+        type: "string",
+        value: UTF8ToString(value)
+      }
     });
   }
 }
 
 function js_dispatch_subject_event_float(name, value) {
-  if (typeof window !== "undefined" && window.previewStore) {
-    const {setSubject} = window.previewStore.getState();
-    setSubject({
-      name: UTF8ToString(name),
-      type: "float",
-      value
+  if (typeof self !== "undefined" && self.postMessage) {
+    self.postMessage({
+      type: "subject-update",
+      subject: {
+        name: UTF8ToString(name),
+        type: "float",
+        value
+      }
     });
   }
 }
@@ -9189,6 +9206,7 @@ var wasmImports = {
   /** @export */ js_dispatch_subject_event_int,
   /** @export */ js_dispatch_subject_event_string,
   /** @export */ js_log_callback,
+  /** @export */ js_lvgl_assertion_failure_callback,
   /** @export */ js_xml_is_rendered
 };
 
@@ -9199,6 +9217,8 @@ var ___wasm_call_ctors = wasmExports["__wasm_call_ctors"];
 var _lvrt_emscripten_get_heap_size = Module["_lvrt_emscripten_get_heap_size"] = wasmExports["lvrt_emscripten_get_heap_size"];
 
 var _lvrt_emscripten_get_heap_max = Module["_lvrt_emscripten_get_heap_max"] = wasmExports["lvrt_emscripten_get_heap_max"];
+
+var _lvrt_get_lvgl_version = Module["_lvrt_get_lvgl_version"] = wasmExports["lvrt_get_lvgl_version"];
 
 var _lvrt_initialize = Module["_lvrt_initialize"] = wasmExports["lvrt_initialize"];
 
@@ -9252,11 +9272,11 @@ var _lvrt_xml_test_run_stop = Module["_lvrt_xml_test_run_stop"] = wasmExports["l
 
 var _lvrt_health_check = Module["_lvrt_health_check"] = wasmExports["lvrt_health_check"];
 
+var _reference_project_init = Module["_reference_project_init"] = wasmExports["reference_project_init"];
+
 var _free = Module["_free"] = wasmExports["free"];
 
 var _fflush = wasmExports["fflush"];
-
-var _reference_project_init = Module["_reference_project_init"] = wasmExports["reference_project_init"];
 
 var ___funcs_on_exit = wasmExports["__funcs_on_exit"];
 
