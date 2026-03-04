@@ -8,7 +8,7 @@
  *********************/
 
 #include "a_permanent_screen_gen.h"
-#include "reference_project.h"
+#include "../reference_project.h"
 
 /*********************
  *      DEFINES
@@ -55,13 +55,16 @@ lv_obj_t * a_permanent_screen_create(void)
     lv_label_bind_text(lv_label_1, &subject1, NULL);
     
     lv_obj_t * lv_label_2 = lv_label_create(lv_obj_0);
-    lv_label_bind_text(lv_label_2, &subject_float, "%.2f");
+    lv_label_bind_text(lv_label_2, &subject1, NULL);
     
     lv_obj_t * lv_label_3 = lv_label_create(lv_obj_0);
-    lv_label_bind_text(lv_label_3, &subject_string, NULL);
+    lv_label_bind_text(lv_label_3, &subject_float, "%.2f");
     
     lv_obj_t * lv_label_4 = lv_label_create(lv_obj_0);
-    lv_label_set_translation_tag(lv_label_4, "rabbit");
+    lv_label_bind_text(lv_label_4, &subject_string, NULL);
+    
+    lv_obj_t * lv_label_5 = lv_label_create(lv_obj_0);
+    lv_label_set_translation_tag(lv_label_5, "rabbit");
     
     lv_obj_t * lv_button_0 = lv_button_create(lv_obj_0);
     lv_obj_add_subject_set_string_event(lv_button_0, &subject_string, LV_EVENT_PRESSED, "jump");
@@ -72,17 +75,17 @@ lv_obj_t * a_permanent_screen_create(void)
     lv_table_set_cell_ctrl(lv_table_0, 1, 1, LV_TABLE_CELL_CTRL_MERGE_RIGHT);
     // the element 'cell' has no properties specified, skipping
     
-    lv_obj_t * very_simple_0 = very_simple_create(lv_obj_0);
-    
-    lv_obj_t * lv_label_5 = lv_label_create(lv_obj_0);
-    lv_label_set_text(lv_label_5, "---");
-    
-    lv_obj_t * extends_another_0 = extends_another_create(lv_obj_0);
+    very_simple_create(lv_obj_0);
     
     lv_obj_t * lv_label_6 = lv_label_create(lv_obj_0);
-    lv_label_set_text(lv_label_6, "super nested below");
+    lv_label_set_text(lv_label_6, "---");
     
-    lv_obj_t * super_nested_0 = super_nested_create(lv_obj_0);
+    extends_another_create(lv_obj_0);
+    
+    lv_obj_t * lv_label_7 = lv_label_create(lv_obj_0);
+    lv_label_set_text(lv_label_7, "super nested below");
+    
+    super_nested_create(lv_obj_0);
     
     lv_obj_t * lv_arc_0 = lv_arc_create(lv_obj_0);
     lv_arc_set_start_angle(lv_arc_0, 30);
@@ -91,10 +94,10 @@ lv_obj_t * a_permanent_screen_create(void)
     lv_arc_set_start_angle(myarc_0, 40);
     
     lv_obj_t * lv_spangroup_0 = lv_spangroup_create(lv_obj_0);
-    lv_spangroup_add_span(lv_spangroup_0);
+    lv_span_t * lv_spangroup_span_0 = lv_spangroup_add_span(lv_spangroup_0);
     
     lv_obj_t * lv_chart_0 = lv_chart_create(lv_obj_0);
-    lv_chart_add_series(lv_chart_0, lv_color_hex(0xff0000), LV_CHART_AXIS_PRIMARY_Y);
+    lv_chart_series_t * lv_chart_series_0 = lv_chart_add_series(lv_chart_0, lv_color_hex(0xff0000), LV_CHART_AXIS_PRIMARY_Y);
     
     lv_obj_t * lv_scale_0 = lv_scale_create(lv_obj_0);
     lv_scale_section_t * lv_scale_section_0 = lv_scale_add_section(lv_scale_0);

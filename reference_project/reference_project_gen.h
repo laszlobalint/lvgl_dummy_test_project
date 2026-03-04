@@ -19,9 +19,13 @@ extern "C" {
 
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE
     #include "lvgl.h"
+    #include "src/core/lv_obj_class_private.h"
 #else
     #include "lvgl/lvgl.h"
+    #include "lvgl/src/core/lv_obj_class_private.h"
 #endif
+
+
 
 /*********************
  *      DEFINES
@@ -52,7 +56,7 @@ typedef enum {
     UI_STATE_ERROR,
 
     /**
-     * Big problem.
+     * A Big problem.
      */
     UI_STATE_CRITICAL
 }ui_state_t;
@@ -127,7 +131,7 @@ void reference_project_init_gen(const char * asset_path);
  *   POST INCLUDES
  **********************/
 
-/*Include all the widget and components of this library*/
+/*Include all the widgets, components and screens of this library*/
 #include "components/chart_gen.h"
 #include "components/component_with_previews/component_with_previews_gen.h"
 #include "components/extends_widget_gen.h"

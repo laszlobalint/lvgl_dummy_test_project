@@ -8,7 +8,7 @@
  *********************/
 
 #include "mybutton_gen.h"
-#include "reference_project.h"
+#include "../reference_project.h"
 
 /*********************
  *      DEFINES
@@ -81,7 +81,7 @@ lv_obj_t * mybutton_create(lv_obj_t * parent, lv_color_t button_color, lv_opa_t 
     lv_obj_add_style(lv_button_0, &style_sb, LV_PART_SCROLLBAR | LV_STATE_PRESSED | LV_STATE_CHECKED);
     lv_obj_bind_state_if_gt(lv_button_0, subject, LV_STATE_DISABLED, ref_value);
     lv_obj_bind_state_if_gt(lv_button_0, subject, LV_STATE_CHECKED, 20);
-    lv_obj_add_subject_increment_event(lv_button_0, &subject1, LV_EVENT_CLICKED, 10);
+    lv_subject_increment_dsc_t * subject_increment_event_0 = lv_obj_add_subject_increment_event(lv_button_0, &subject1, LV_EVENT_CLICKED, 10);
     lv_obj_t * lv_image_0 = lv_image_create(lv_button_0);
     lv_image_set_src(lv_image_0, icon);
     

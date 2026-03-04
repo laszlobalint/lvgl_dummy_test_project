@@ -8,7 +8,7 @@
  *********************/
 
 #include "some_screen_1_gen.h"
-#include "reference_project.h"
+#include "../reference_project.h"
 
 /*********************
  *      DEFINES

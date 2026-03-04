@@ -8,7 +8,7 @@
  *********************/
 
 #include "main_screen_gen.h"
-#include "reference_project.h"
+#include "../reference_project.h"
 
 /*********************
  *      DEFINES
@@ -52,7 +52,7 @@ lv_obj_t * main_screen_create(void)
     lv_obj_set_name_static(lv_obj_0, "main_screen_#");
     lv_obj_set_flex_flow(lv_obj_0, LV_FLEX_FLOW_COLUMN);
 
-    lv_obj_t * mybutton_0 = mybutton_create(lv_obj_0, lv_color_hex(0xff0000), (255 * 70 / 100), NULL, "My button 1", &subject1, "%d °C", 30);
+    mybutton_create(lv_obj_0, lv_color_hex(0xff0000), (255 * 70 / 100), NULL, "My button 1", &subject1, "%d °C", 30);
     
     lv_obj_t * mybutton_1 = mybutton_create(lv_obj_0, lv_color_hex(0x000000), 200, img_bell, "My button 2", &subject1, "%d °C", 30);
     lv_obj_set_width(mybutton_1, 100);
@@ -68,9 +68,9 @@ lv_obj_t * main_screen_create(void)
     lv_label_set_text(lv_label_0, "an additional label");
     lv_obj_set_style_width(lv_label_0, 150, 0);
     
-    lv_obj_t * super_button_0 = super_button_create(lv_obj_0, BTN_TEXT, &subject1);
+    super_button_create(lv_obj_0, BTN_TEXT, &subject1);
     
-    lv_obj_t * super_button_1 = super_button_create(lv_obj_0, BTN_TEXT, &subject1);
+    super_button_create(lv_obj_0, BTN_TEXT, &subject1);
     
     lv_obj_t * with_getter_0 = with_getter_create(lv_obj_0);
     lv_obj_t * with_getter_container_0 = with_getter_get_container(with_getter_0);
@@ -98,7 +98,7 @@ lv_obj_t * main_screen_create(void)
     smart_slider_bind_value(smart_slider_0, &subject1, UI_STATE_WARNING, "%04d");
     smart_slider_bind_value(smart_slider_0, &subject2, UI_STATE_CRITICAL, "%d %%");
     
-    lv_obj_t * h3_0 = h3_create(lv_obj_0);
+    h3_create(lv_obj_0);
     
     lv_obj_t * h3_1 = h3_create(lv_obj_0);
     lv_obj_set_width(h3_1, 100);

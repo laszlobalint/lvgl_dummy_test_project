@@ -1,6 +1,6 @@
 list(
   APPEND
-  PROJECT_SOURCES
+  LV_EDITOR_PROJECT_SOURCES
   ${CMAKE_CURRENT_LIST_DIR}/components/chart_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/component_with_previews/component_with_previews_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/extends_widget_gen.c
@@ -11,7 +11,6 @@ list(
   ${CMAKE_CURRENT_LIST_DIR}/components/super_button_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/fonts/font_sm_data.c
   ${CMAKE_CURRENT_LIST_DIR}/fonts/Nunito_SemiBold_ttf_data.c
-  ${CMAKE_CURRENT_LIST_DIR}/images/img_bell_data.c
   ${CMAKE_CURRENT_LIST_DIR}/reference_project_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/reference_project.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/a_permanent_screen_gen.c

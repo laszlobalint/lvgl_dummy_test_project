@@ -8,7 +8,7 @@
  *********************/
 
 #include "my_animated_list_item_gen.h"
-#include "reference_project.h"
+#include "../reference_project.h"
 
 /*********************
  *      DEFINES

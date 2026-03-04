@@ -8,8 +8,14 @@
  *********************/
 
 #include "smart_slider_private_gen.h"
-#include "lvgl/src/core/lv_obj_class_private.h"
-#include "reference_project.h"
+#ifdef LV_LVGL_H_INCLUDE_SIMPLE
+    #include "lvgl.h"
+    #include "src/core/lv_obj_class_private.h"
+#else
+    #include "lvgl/lvgl.h"
+    #include "lvgl/src/core/lv_obj_class_private.h"
+#endif
+#include "../../reference_project.h"
 
 /*********************
  *      DEFINES
