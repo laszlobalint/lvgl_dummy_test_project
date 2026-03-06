@@ -9,7 +9,6 @@ list(
   ${CMAKE_CURRENT_LIST_DIR}/components/my_animated_list_item_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/mybutton_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/super_button_gen.c
-  ${CMAKE_CURRENT_LIST_DIR}/fonts/font_sm_data.c
   ${CMAKE_CURRENT_LIST_DIR}/fonts/Nunito_SemiBold_ttf_data.c
   ${CMAKE_CURRENT_LIST_DIR}/reference_project_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/reference_project.c

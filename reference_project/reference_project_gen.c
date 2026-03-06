@@ -70,7 +70,6 @@ lv_font_t * font_md;
 extern uint8_t Nunito_SemiBold_ttf_data[];
 extern size_t Nunito_SemiBold_ttf_data_size;
 lv_font_t * font_sm;
-extern lv_font_t font_sm_data;
 
 /*----------------
  * Images
@@ -115,8 +114,9 @@ void reference_project_init_gen(const char * asset_path)
 
     /* create tiny ttf font 'font_md' from C array */
     font_md = lv_tiny_ttf_create_data(Nunito_SemiBold_ttf_data, Nunito_SemiBold_ttf_data_size, 40);
-    /* get font 'font_sm' from a C array */
-    font_sm = &font_sm_data;
+    /* create bin font 'font_sm' from file */
+    lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/font_sm");
+    font_sm = lv_binfont_create(buf);
 
 
     /*----------------

@@ -40,7 +40,7 @@
 	<fonts>
 		<tiny_ttf src_path="fonts/Nunito_SemiBold.ttf" size="40" name="font_md" />
 		<bin
-			as_file="false"
+			as_file="true"
 			bpp="8"
 			range="0x20-0xf7"
 			symbols=""
